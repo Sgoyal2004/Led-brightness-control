@@ -1,0 +1,30 @@
+import time
+
+# Simulated LED Brightness Control with + and - keys
+def set_brightness(brightness):
+    print(f"LED Brightness: {'' * (brightness // 10)} {brightness}%")
+
+current_brightness = 20  # Start at 50%
+set_brightness(current_brightness)
+
+while True:
+    user_input = input("Press '+' to increase, '-' to decrease brightness, or 'exit' to quit: ")
+    
+    if user_input.lower() == 'exit':
+        print("Exiting program.")
+        break
+    
+    if user_input == '+':
+        if current_brightness < 100:
+            current_brightness += 10
+            set_brightness(current_brightness)
+        else:
+            print("Brightness is already at maximum.")
+    elif user_input == '-':
+        if current_brightness > 0:
+            current_brightness -= 10
+            set_brightness(current_brightness)
+        else:
+            print("Brightness is already at minimum.")
+    else:
+        print("Invalid input. Press '+' or '-' to change brightness.")
