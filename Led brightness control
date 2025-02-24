@@ -4,7 +4,7 @@ import time
 def set_brightness(brightness):
     print(f"LED Brightness: {'' * (brightness // 10)} {brightness}%")
 
-current_brightness = 20  # Start at 50%
+current_brightness = 40  # Start at 40%
 set_brightness(current_brightness)
 
 while True:
